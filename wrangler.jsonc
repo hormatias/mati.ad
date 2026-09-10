@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mati-ad",
+  "main": ".build/worker.js",
+  "compatibility_date": "2026-09-08",
+  "build": { "command": "pnpm build" },
+  "routes": [{ "pattern": "mati.ad", "custom_domain": true }]
+}
