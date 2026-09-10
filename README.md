@@ -2,7 +2,7 @@
 
 Página mínima de contacto: `index.html`, sin JavaScript de cliente, frameworks, fuentes externas ni analítica. Inglés, español rioplatense, catalán, francés y portugués visibles simultáneamente.
 
-Los cinco enlaces abren `https://wa.me/376367071` con el texto `hola, te contacto desde mati.ad`. El visitante revisa y envía el mensaje; la página no lo envía automáticamente.
+Los cinco enlaces abren `https://wa.me/376367071` con un mensaje precompletado en el idioma del enlace elegido (EN/ES/CA/FR/PT). El visitante revisa y envía el mensaje; la página no lo envía automáticamente.
 
 ## Uso
 
