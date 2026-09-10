@@ -6,7 +6,7 @@ Los cinco enlaces abren `https://wa.me/376367071` con un mensaje precompletado e
 
 ## Vista previa al compartir
 
-Las etiquetas Open Graph y Twitter Card apuntan a `https://mati.ad/images/og-mati-v1.png` (1200×630). La imagen está versionada y se publica como asset, sin generarla durante el deploy.
+Las etiquetas Open Graph y Twitter Card apuntan a `https://mati.ad/images/og-mati-square-v2.png` (1200×1200). La imagen está versionada y se publica como asset, sin generarla durante el deploy.
 
 Para regenerarla, instalá Playwright en tu entorno de edición y ejecutá `node scripts/generate-og.cjs` (admite una ruta al módulo como argumento y `CHROMIUM_PATH` opcional). Si se cambia el diseño, usá un nuevo nombre de imagen y actualizá las etiquetas para evitar cachés antiguas.
 
