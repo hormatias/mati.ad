@@ -5,5 +5,8 @@
   "compatibility_date": "2026-09-08",
   "build": { "command": "pnpm build" },
   "assets": { "directory": "./assets" },
-  "routes": [{ "pattern": "mati.ad", "custom_domain": true }]
+  "routes": [
+    { "pattern": "mati.ad", "custom_domain": true },
+    { "pattern": "www.mati.ad", "custom_domain": true }
+  ]
 }
