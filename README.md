@@ -10,6 +10,15 @@ Las etiquetas Open Graph y Twitter Card apuntan a `https://mati.ad/images/og-mat
 
 Para regenerarla, instalá Playwright en tu entorno de edición y ejecutá `node scripts/generate-og.cjs` (admite una ruta al módulo como argumento y `CHROMIUM_PATH` opcional). Si se cambia el diseño, usá un nuevo nombre de imagen y actualizá las etiquetas para evitar cachés antiguas.
 
+## SEO y acceso para asistentes de IA
+
+- HTML estático: enlaces y contenido accesibles sin ejecutar JavaScript.
+- `robots.txt`: buscadores y asistentes de consulta autorizados; señal `ai-input=yes`. La autorización de entrenamiento se mantiene separada (`ai-train=no`). Cloudflare puede anteponer sus reglas administradas; verificar siempre la respuesta pública combinada.
+- `sitemap.xml`: solo la URL canónica `https://mati.ad/`. No inventa versiones de idioma distintas para una página multilingüe única.
+- JSON-LD `Person` y `ContactPage`, sin código ejecutable ni datos biográficos inventados.
+- `llms.txt`: resumen público en Markdown con enlaces a las fuentes. Es una convención opcional, no garantiza lectura por agentes, indexación, citas ni posicionamiento.
+- No se modifican bloqueos globales de Cloudflare ni Access de otros subdominios.
+
 ## Uso
 
 Abrí `index.html` directamente, o ejecutá con Node.js 22+ y pnpm 11.13.1:

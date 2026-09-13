@@ -1,0 +1,25 @@
+# Public contact site: search indexing and AI-assisted retrieval are welcome.
+# Training permission is separate and is not granted by this file.
+User-agent: *
+Allow: /
+Content-Signal: search=yes,ai-input=yes,ai-train=no
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+Sitemap: https://mati.ad/sitemap.xml

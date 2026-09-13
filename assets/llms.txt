@@ -1,0 +1,25 @@
+# Mati — mati.ad
+
+> Mati's personal contact page. The page offers WhatsApp contact links in English, Spanish, Catalan, French and Portuguese.
+
+## Contact
+
+- [Canonical contact page](https://mati.ad/): The same five language options are visible on one static HTML page; no JavaScript is required.
+- [WhatsApp](https://wa.me/376367071): Each language option on the contact page pre-fills a greeting in that language. The visitor reviews and sends the message; opening the link does not send it automatically.
+
+## Languages
+
+- English: Contact me.
+- Español: Contáctame.
+- Català: Contacta’m.
+- Français: Contactez-moi.
+- Português: Fala comigo.
+
+## Site resources
+
+- [Portrait](https://mati.ad/images/mati.png): Mati's portrait.
+- [Sharing image](https://mati.ad/images/og-mati-square-v2.png): Square social preview.
+- [Sitemap](https://mati.ad/sitemap.xml): Canonical public page.
+- [Crawler policy](https://mati.ad/robots.txt): Search and AI-assisted retrieval policy.
+
+https://www.mati.ad/ is an alternate hostname for the same page. https://mati.ad/ is the canonical URL.
