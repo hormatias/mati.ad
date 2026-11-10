@@ -58,9 +58,10 @@
   <meta name="twitter:image:alt" content="Mati — mati.ad · Contact me">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232d26'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='48' fill='%23f6f3ed'%3EM%3C/text%3E%3C/svg%3E">
   <style>
+    @font-face { font-family: 'Uxum'; src: url('/fonts/UxumVF.woff2') format('woff2'); font-weight: 200 800; font-style: normal; font-display: swap; }
     :root { color-scheme: dark; --paper: #f6f3ed; --ink: #f6f3ed; --muted: #d5d8cb; --line: rgb(246 243 237 / .32); --accent: #d8e5b5; }
     * { box-sizing: border-box; }
-    body { margin: 0; background: #000; color: var(--ink); font-family: Georgia, 'Times New Roman', serif; }
+    body { margin: 0; background: #000; color: var(--ink); font-family: 'Uxum', system-ui, sans-serif; }
     #shader-background { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; background: #000; }
     main { position: relative; z-index: 1; width: min(100% - 48px, 620px); min-height: 100svh; margin: auto; display: flex; flex-direction: column; justify-content: center; padding: 48px 0; }
     .identity { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 40px; }
@@ -79,12 +80,12 @@
     @media (prefers-reduced-motion: reduce) {
       .portrait, .portrait:hover { transform: none; transition: none; }
     }
-    h1 { font-size: clamp(52px, 12vw, 84px); font-weight: 400; letter-spacing: -.065em; margin: 0; line-height: 1; }
+    h1 { font-size: clamp(52px, 12vw, 84px); font-weight: 700; letter-spacing: -.035em; margin: 0; line-height: 1; }
     h1 span { color: var(--muted); }
     ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
     li { border-bottom: 1px solid var(--line); }
     a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px; min-height: 72px; padding: 16px 4px; color: inherit; text-decoration: none; }
-    .phrase { font-size: clamp(26px, 5vw, 36px); letter-spacing: -.03em; }
+    .phrase { font-size: clamp(26px, 5vw, 36px); font-weight: 600; letter-spacing: -.025em; }
     .language { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--muted); text-align: right; }
     a:hover { color: var(--accent); background: rgb(246 243 237 / .1); }
     a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
