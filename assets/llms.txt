@@ -17,7 +17,7 @@
 
 ## Site resources
 
-- [Portrait](https://mati.ad/images/mati.png): Mati's portrait.
+- [Portrait](https://mati.ad/images/mati.jpg): Mati's portrait.
 - [Sharing image](https://mati.ad/images/og-mati-square-v2.png): Square social preview.
 - [Sitemap](https://mati.ad/sitemap.xml): Canonical public page.
 - [Crawler policy](https://mati.ad/robots.txt): Search and AI-assisted retrieval policy.

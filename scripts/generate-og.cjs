@@ -5,7 +5,7 @@ const { readFileSync } = require('node:fs');
 const path = require('node:path');
 (async () => {
   const root = path.resolve(__dirname, '..');
-  const portrait = readFileSync(path.join(root, 'assets/images/mati.png')).toString('base64');
+  const portrait = readFileSync(path.join(root, 'assets/images/mati.jpg')).toString('base64');
   const browser = await chromium.launch({headless:true, ...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH} : {})});
   try {
     const page = await browser.newPage({viewport:{width:1200,height:1200},deviceScaleFactor:1});
@@ -16,7 +16,7 @@ const path = require('node:path');
       .copy{width:900px;text-align:center}.rule{height:1px;background:#d6d7cb;margin-bottom:28px}
       p{font-size:34px;line-height:1.6;margin:0;color:#315840;letter-spacing:-.5px}
       img{width:520px;height:520px;border-radius:50%;filter:sepia(.3) hue-rotate(65deg) saturate(.65);box-shadow:0 14px 36px -12px rgb(35 45 38 / .2)}
-    </style></head><body><main><div class="copy"><h1>mati<span>.ad</span></h1><div class="rule"></div><p>Contact me · Contáctame · Contacta’m<br>Contactez-moi · Fala comigo</p></div><img alt="Mati" src="data:image/png;base64,${portrait}"></main></body></html>`);
+    </style></head><body><main><div class="copy"><h1>mati<span>.ad</span></h1><div class="rule"></div><p>Contact me · Contáctame · Contacta’m<br>Contactez-moi · Fala comigo</p></div><img alt="Mati" src="data:image/jpeg;base64,${portrait}"></main></body></html>`);
     await page.locator('img').evaluate(img=>img.decode());
     await page.screenshot({path:path.join(root,'assets/images/og-mati-square-v2.png'),type:'png'});
     console.log('Generated assets/images/og-mati-square-v2.png — 1200×1200');

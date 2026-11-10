@@ -35,8 +35,8 @@ test('Worker serves the exact index and five WhatsApp contact links', async () =
 
 test('Portrait is a local asset and is permitted by the page CSP', async () => {
   const html = readFileSync('index.html', 'utf8');
-  assert.match(html, /<img[^>]+src="\/images\/mati\.png"/);
-  assert.ok(existsSync('assets/images/mati.png'));
+  assert.match(html, /<img[^>]+src="\/images\/mati\.jpg"/);
+  assert.ok(existsSync('assets/images/mati.jpg'));
   const config = JSON.parse(readFileSync('wrangler.jsonc', 'utf8'));
   assert.equal(config.assets.directory, './assets');
   execFileSync(process.execPath, ['scripts/build.mjs']);
