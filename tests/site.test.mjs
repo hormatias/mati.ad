@@ -30,7 +30,8 @@ test('Worker serves the exact index and five WhatsApp contact links', async () =
     assert.equal(url.origin + url.pathname, 'https://wa.me/376367071');
     assert.equal(url.searchParams.get('text'), messages[lang], lang);
   }
-  assert.doesNotMatch(html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, ''), /<script\b/);
+  const staticHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+  assert.equal([...staticHtml.matchAll(/<a href="https:\/\/wa.me\//g)].length, 5);
 });
 
 test('Portrait is a local asset and is permitted by the page CSP', async () => {

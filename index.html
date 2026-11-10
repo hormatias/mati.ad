@@ -115,7 +115,13 @@
       const gl = canvas.getContext('webgl', { antialias: false, alpha: false });
       if (!gl) return;
       const vertex = `attribute vec2 position; void main() { gl_Position = vec4(position, 0.0, 1.0); }`;
-      const fragment = `precision mediump float; uniform vec2 resolution; uniform float time;
+      const fragment = `
+        #ifdef GL_FRAGMENT_PRECISION_HIGH
+        precision highp float;
+        #else
+        precision mediump float;
+        #endif
+        uniform vec2 resolution; uniform float time;
         void main() { vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
           float t = time * 0.05; float lineWidth = 0.002; vec3 color = vec3(0.0);
           for (int j = 0; j < 3; j++) { for (int i = 0; i < 5; i++) {
@@ -128,9 +134,30 @@
       const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const resize = () => { const dpr = Math.min(devicePixelRatio || 1, 900 / Math.max(innerWidth, innerHeight)); canvas.width = Math.max(1, Math.round(innerWidth * dpr)); canvas.height = Math.max(1, Math.round(innerHeight * dpr)); gl.viewport(0, 0, canvas.width, canvas.height); };
       addEventListener('resize', resize); resize(); gl.useProgram(program); gl.enableVertexAttribArray(position); gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
-      const draw = (now) => { if (document.hidden) return; gl.uniform2f(resolution, canvas.width, canvas.height); gl.uniform1f(time, reduced ? 0 : now * 3.0); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); if (!reduced) requestAnimationFrame(draw); };
-      document.addEventListener('visibilitychange', () => { if (!document.hidden && !reduced) requestAnimationFrame(draw); });
-      draw(0);
+      let shaderTime = 1;
+      let previousTime = null;
+      let animationFrame;
+      const draw = (now) => {
+        if (document.hidden) return;
+        // The reference advances 0.05 per frame at 60 fps: 3 units per second.
+        // RAF timestamps are milliseconds. Wrap at the shader's 20-unit period
+        // to preserve floating-point precision during long visits.
+        if (!reduced && previousTime !== null) {
+          shaderTime = (shaderTime + Math.min(now - previousTime, 100) * 0.003) % 20;
+        }
+        previousTime = now;
+        gl.uniform2f(resolution, canvas.width, canvas.height);
+        gl.uniform1f(time, shaderTime);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        if (!reduced) animationFrame = requestAnimationFrame(draw);
+      };
+      document.addEventListener('visibilitychange', () => {
+        cancelAnimationFrame(animationFrame);
+        previousTime = null;
+        if (!document.hidden) draw(performance.now());
+      });
+      if (reduced) addEventListener('resize', () => draw(performance.now()));
+      draw(performance.now());
     })();
   </script>
 </body>

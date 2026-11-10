@@ -18,7 +18,7 @@ test('Public discovery files permit search and AI assistants with a canonical si
   assert.ok(llms.includes('English, Spanish, Catalan, French and Portuguese'));
 });
 
-test('Page exposes truthful structured data and indexable metadata without executable JS', () => {
+test('Page exposes truthful structured data and indexable metadata in static HTML', () => {
   const html = readFileSync('index.html', 'utf8');
   assert.match(html, /name="robots" content="index, follow, max-image-preview:large"/);
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
@@ -31,5 +31,5 @@ test('Page exposes truthful structured data and indexable metadata without execu
   assert.equal(person.url, 'https://mati.ad/');
   assert.equal(page.mainEntity['@id'], person['@id']);
   assert.deepEqual(page.inLanguage, ['en', 'es', 'ca', 'fr', 'pt']);
-  assert.doesNotMatch(html.replace(blocks[0][0], ''), /<script\b/);
+  assert.match(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ''), /<h1>mati<span>\.ad<\/span><\/h1>/);
 });

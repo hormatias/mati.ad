@@ -1,6 +1,6 @@
 # mati.ad
 
-Página mínima de contacto: `index.html`, sin JavaScript de cliente, frameworks, fuentes externas ni analítica. Inglés, español rioplatense, catalán, francés y portugués visibles simultáneamente.
+Página mínima de contacto: `index.html`, con un fondo WebGL animado en JavaScript, sin frameworks, fuentes externas ni analítica. El contenido y los enlaces funcionan sin JavaScript. Inglés, español rioplatense, catalán, francés y portugués visibles simultáneamente.
 
 Los cinco enlaces abren `https://wa.me/376367071` con un mensaje precompletado en el idioma del enlace elegido (EN/ES/CA/FR/PT). El visitante revisa y envía el mensaje; la página no lo envía automáticamente.
 
