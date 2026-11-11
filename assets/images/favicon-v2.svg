@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="light" cx="58%" cy="36%" r="70%">
+      <stop offset="0.36" stop-color="#14191c"/>
+      <stop offset="0.52" stop-color="#173b88"/>
+      <stop offset="0.59" stop-color="#426dff"/>
+      <stop offset="0.65" stop-color="#67ffff"/>
+      <stop offset="0.70" stop-color="#fff"/>
+      <stop offset="0.76" stop-color="#ffffa0"/>
+      <stop offset="0.82" stop-color="#ff8a3d"/>
+      <stop offset="1" stop-color="#171715"/>
+    </radialGradient>
+    <pattern id="stripes" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="5" height="10" fill="#131514" fill-opacity=".92"/>
+    </pattern>
+    <clipPath id="corners"><rect width="64" height="64" rx="13"/></clipPath>
+  </defs>
+  <g clip-path="url(#corners)">
+    <rect width="64" height="64" fill="url(#light)"/>
+    <rect width="64" height="64" fill="url(#stripes)"/>
+    <rect width="64" height="64" fill="#000" fill-opacity=".18"/>
+  </g>
+  <!-- Uxum, weight 700: outlined lowercase m, independent of installed fonts. -->
+  <path transform="translate(6.4 47) scale(.055 -.055)" fill="#fff9ed" stroke="#111817" stroke-width="52" stroke-linejoin="round" paint-order="stroke fill" d="M56 520L191 520Q194 505 194 491Q194 451 173 408L187 408Q217 464 262.5 499.5Q308 535 372 535Q438 535 477.5 497.5Q517 460 512 398L525 398Q553 462 598.5 498.5Q644 535 711 535Q790 535 832.5 483.5Q875 432 875 337L875 0L741 0L741 304Q741 356 720.5 385Q700 414 655 414Q621 414 593.5 396.5Q566 379 550 341.5Q534 304 534 248L534 0L399 0L399 316Q399 362 378.5 388Q358 414 314 414Q279 414 251.5 397Q224 380 207.5 342.5Q191 305 191 248L191 0L56 0Z"/>
+</svg>
